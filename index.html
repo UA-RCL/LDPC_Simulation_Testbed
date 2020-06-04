@@ -33,30 +33,27 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#project-status">Project Status</a>
-          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <header class="bg-info text-dark">
+  <header class="bg-dark text-dark">
     <div class="container text-center">
       <!--Royalty free source: https://www.cleanpng.com/png-system-on-a-chip-psoc-integrated-circuits-chips-si-1135310/download-png.html-->
-      <img class="img-fluid" src="./images/soc.png" alt="" width="500" height="500">
+      <img class="img-fluid" src="./images/ldpc_concept.png" alt="" width="1000" height="500">
     </div>
     <div class="container text-center">
       <h1>LDPC Simulation Testbed</h1>
       <p class="lead"><b>High Throughput FPGA based Simulation Testbed for LDPC codes</b></p>
-      <a class="btn btn-secondary btn-large" href="https://github.com/UA-RCL/CEDR" target="_blank">GitHub</a>
+      <a class="btn btn-secondary btn-large" href="https://github.com/UA-RCL/LDPC_Simulation_Testbed" target="_blank">GitHub</a>
       <br>
       <div class="row justify-content-center mt-2">
         <div class="col-sm-0 text-center mr-1">
-          <a class="github-button" href="https://github.com/UA-RCL/CEDR" data-icon="octicon-star" data-size="large" aria-label="Star UA-RCL/CEDR on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/UA-RCL/LDPC_Simulation_Testbed" data-icon="octicon-star" data-size="large" aria-label="Star UA-RCL/LDPC_Simulation_Testbed on GitHub">Star</a>
         </div>
         <div class="col-sm-0 text-center ml-1">
-          <a class="github-button" href="https://github.com/UA-RCL/CEDR/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork UA-RCL/CEDR on GitHub">Fork</a>
+          <a class="github-button" href="https://github.com/UA-RCL/LDPC_Simulation_Testbed/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork UA-RCL/LDPC_Simulation_Testbed on GitHub">Fork</a>
         </div>
       </div>
     </div>
@@ -66,7 +63,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2>Motivation and Impact</h2>
+          <h2>About</h2>
           <p class="lead">
           	Low Density Parity Check (LDPC) codes are a popular choice for employment in several cutting edge communication standards such as 5G, WiFi, WiMax, 10 Gigabit Ethernet etc.. With the increasing popularity of LDPC codes, the research to obtain decoders with better error correction performance and reduced hardware footprint is becoming prominent as well. One crucial aspect of this research is the characterization of novel decoders through high resolution simulation. The recent improvements in decoders have raised the scale of this simulation to upto 10<sup>14</sup>. The feasibility of the time scale for completing such simulations on general purpose CPU based software platforms is becoming a concern. <br></p>
           
@@ -80,25 +77,28 @@
 
           	<p class="lead">This project presents an FPGA based high throughput and modular simulation testbed for rapid simulation of decoders for LDPC codes. The researchers can replace different modules of this testbed to incorporate their own hard-decision decoders for rapid characterization.<br><br>
           	
-          	The presented simulation testbed reduces the simulation duration for Probabilistic Gallger B (PGaB) decoder, down to <b>24 hours</b> from an estimated <b>199 years</b> on a single core CPU platform.
+          	The presented simulation testbed reduces the simulation duration for Probabilistic Gallger B (PGaB) decoder, down to <b>24 hours</b> from an estimated <b>199 years</b> on a single core CPU platform.<br><br>
 
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
+       
+       	<p class="lead">
+       		The FPGA based simulation testbed is comprised of building blocks illustrated in the following diagram. The user can specify the following parametes of the simulation-<br>
+       		<ol>
+       			<li>Channel noise level (<i>Alpha</i>)</li>
+       			<li>Maximum decoding iterations (<i>max_iter</i>)</li>
+       			<li>Maximum codewords in failure benchmark (<i>max_cwf</i>)</li>
+       		</ol>
+       	</p>
 
-  <section id="architecture and results">
-  	<div class="container">
-  		<div class="row">
-  			<div class="col-lg-10 mx-auto">
-  				<h2>Testbed Architecture and Results</h2>
-  				<p class="lead">
+       	<p class="lead">
+       	The <b>"LDPC Decoder"</b> module is the piece that can be replaced by any desired decoder that is required to be evaluated. </p>
   					 <div class="container text-center">
 	        			<img class="img-fluid" src="./images/testbed_architecture.png" alt="" width="1000" height="100">
           			</div>
 
           			<br><br>
+          <p class="lead">
+         As a case study, we have integrated and simulated the Gallager B (GaB) and the Probabilistic Gallager B (PGaB) decoders with our FPGA based testbed. The PGaB being a better performing variant of GaB, requires processing large number of data (upto 10<sup>14</sup>) to complete the simulation. With the benefit of our high throughput FPGA based testbed, we have completed the highest resolution simulation on PGaB (<i>Alpha = 0.005</i>) till date in feasible amount of time and presented the result in terms of Frame Error Rate (FER). 
 
           			<div class="container text-center">
           				<img class="img-fluid" src="./images/fer_cpu.jpg" alt="" width="1000" height="auto">

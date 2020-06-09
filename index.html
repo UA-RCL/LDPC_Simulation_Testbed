@@ -2,7 +2,6 @@
 <!--
   Based on the Scrolling Nav template from Start Bootstrap
   https://github.com/BlackrockDigital/startbootstrap-scrolling-nav
-
 -->
 <html lang="en">
 
@@ -83,23 +82,16 @@
           </p>
        
        	<p class="lead">
-       		The FPGA based simulation testbed is comprised of building blocks illustrated in the following diagram. The user can specify the following parametes of the simulation-<br>
-       		<ol>
-       			<li>Channel noise level (<i>Alpha</i>)</li>
-       			<li>Maximum decoding iterations (<i>max_iter</i>)</li>
-       			<li>Maximum codewords in failure benchmark (<i>max_cwf</i>)</li>
-       		</ol>
-       	</p>
-
-       	<p class="lead">
-       	The <b>"LDPC Decoder"</b> module is the piece that can be replaced by any desired decoder that is required to be evaluated. </p>
+       		
+       		Besides accelerated simulation time, the benefit of this testbed lies in the flexibility of adapting it to other hard-decision decoding algorithms. The user can switch the decoder module of the testbed with any existing or experimental hard-decision decoder module. This flexible property of the testbed significantly reduces the design time of a full-fledged testbed for testing any decoder. This allows the researchers to focus only on the decoding algorithm to improve the error correction performance, without worrying about the remaining modules.
+       </p>
   					 <div class="container text-center">
-	        			<img class="img-fluid" src="./images/testbed_architecture.png" alt="" width="1000" height="100">
+	        			<img class="img-fluid" src="./images/LDPC_git_diagram_2.png" alt="" width="1000" height="500">
           			</div>
 
           			<br><br>
           <p class="lead">
-         As a case study, we have integrated and simulated the Gallager B (GaB) and the Probabilistic Gallager B (PGaB) decoders with our FPGA based testbed. The PGaB being a better performing variant of GaB, requires processing large number of data (upto 10<sup>14</sup>) to complete the simulation. With the benefit of our high throughput FPGA based testbed, we have completed the highest resolution simulation on PGaB (<i>Alpha = 0.005</i>) till date in feasible amount of time and presented the result in terms of Frame Error Rate (FER). 
+         Our testbed is capable of simulating several well-established hard-decision decoding algorithms like- Gallager B (GaB), Probabilistic GaB (PGaB), Gradient Descent Bit Flipping (GDBF), Probabilistic GDBF (PGDBF), Probabilistic Parallel Bit Flipping (PPBF), Tabu-list Random-penalty GDBF (TRGDBF) etc. As a case study, we have integrated and simulated the <b>GaB</b> and the <b>PGaB</b> decoders with our FPGA based testbed. The PGaB being a better performing variant of GaB, requires processing large number of data (upto 10<sup>14</sup>) to complete the simulation. With the benefit of our high throughput FPGA based testbed, we have completed the highest resolution simulation on PGaB (<i>Alpha = 0.005</i>) till date in feasible amount of time and presented the result in terms of Frame Error Rate (FER). 
 
           			<div class="container text-center">
           				<img class="img-fluid" src="./images/fer_cpu.jpg" alt="" width="1000" height="auto">
@@ -158,6 +150,13 @@
             <div class="col-sm mx-auto text-center">
               <div class="contrib-profile" data-name="Ali Akoglu" data-location="UArizona"></div>
             </div>
+          </div>
+          
+          <h4>Previous Contributors</h4>
+            <div class="col-sm mx-auto text-center">
+              <div class="contrib-profile" data-name="Burak Unal" data-location=""></div>
+            </div>
+
           </div>
         </div>
       </div>

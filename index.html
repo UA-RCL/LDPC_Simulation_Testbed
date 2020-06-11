@@ -33,6 +33,9 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
           </li>
+          <li class="nav-item">
+          	<a class="nav-link js-scroll-trigger" href="#projectstatus">Project Status</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -65,7 +68,8 @@
         <div class="col-lg-10 mx-auto">
           <h2>About</h2>
           <p class="lead">
-          	Low Density Parity Check (LDPC) codes are a popular choice for error correction purposes in several cutting edge communication standards such as 5G, WiFi, WiMax, 10 Gigabit Ethernet etc.. With the increasing popularity of LDPC codes, the research to obtain decoders with better error correction performance and reduced hardware footprint is becoming prominent as well. One crucial aspect of this research is the characterization of novel decoders through high resolution simulation. The recent improvements in decoders have raised the scale of this simulation to upto 10<sup>14</sup>. The feasibility of the time scale for completing such simulations on general purpose CPU based software platforms is becoming a concern. <br></p>
+          	This project presents an FPGA based high throughput and modular simulation testbed for rapid simulation of decoders for Low Density Parity Check (LDPC) codes. The users can replace different modules of this testbed to incorporate their own hard-decision decoders for rapid characterization.
+          	</p>
           
           	
           	<div class="container text-center">
@@ -75,30 +79,19 @@
 	        			<img class="img-fluid" src="./images/project_images/wimax.png" alt="" width="150" height="100">
           	</div>
 
-          	<p class="lead">This project presents an FPGA based high throughput and modular simulation testbed for rapid simulation of decoders for LDPC codes. The researchers can replace different modules of this testbed to incorporate their own hard-decision decoders for rapid characterization.<br><br>
+        <p class="lead">
+				LDPC codes are a popular choice for employment in several cutting edge communication standards such as 5G, WiFi, WiMax, 10 Gigabit Ethernet etc.. With the increasing popularity of LDPC codes, the research to obtain decoders with better error correction performance and reduced hardware footprint is becoming prominent as well. Analyzing and improving the decoders require detailed large scale simulations. General purpose CPU based software execution of such simulators have become infeasible due to long simulation time. Furthermore, developing such simulators on hardware platform (e.g. FPGA) requires significant amount of effort which is outside the scope of research on decoders.<br>
+          		<br>
           	
-          	The presented simulation testbed reduces the simulation duration for Probabilistic Gallger B (PGaB) decoder, down to <b>24 hours</b> from an estimated <b>199 years</b> on a single core CPU platform.<br><br>
+          		The testbed reduces the duration of large scale simulations down to <b>order of hours</b> from <b>order of years</b> on a single core CPU. Furthermore, this highly flexible testbed reduces design time significantly by enabling users to easily integrate their desired decoders with this platform. <br><br>
 
-          </p>
+        </p>
        
-       	<p class="lead">
-       		
-       		Besides accelerated simulation time, the benefit of this testbed lies in the flexibility of adapting it to other hard-decision decoding algorithms. The user can switch the decoder module of the testbed with any existing or experimental hard-decision decoder module. This flexible property of the testbed significantly reduces the design time of a full-fledged testbed for testing any decoder. This allows the researchers to focus only on the decoding algorithm to improve the error correction performance, without worrying about the remaining modules.
-       </p>
-  					 <div class="container text-center">
-	        			<img class="img-fluid" src="./images/LDPC_git_diagram_2.png" alt="" width="1000" height="500">
-          			</div>
-
-          			<br><br>
-          <p class="lead">
-         Our testbed is capable of simulating several well-established hard-decision decoding algorithms like- Gallager B (GaB), Probabilistic GaB (PGaB), Gradient Descent Bit Flipping (GDBF), Probabilistic GDBF (PGDBF), Probabilistic Parallel Bit Flipping (PPBF), Tabu-list Random-penalty GDBF (TRGDBF) etc. As a case study, we have integrated and simulated the <b>GaB</b> and the <b>PGaB</b> decoders with our FPGA based testbed. The PGaB being a better performing variant of GaB, requires processing large number of data (upto 10<sup>14</sup>) to complete the simulation. With the benefit of our high throughput FPGA based testbed, we have completed the highest resolution simulation on PGaB (<i>Alpha = 0.005</i>) till date in feasible amount of time and presented the result in terms of Frame Error Rate (FER). 
-
-          			<div class="container text-center">
-          				<img class="img-fluid" src="./images/fer_cpu.jpg" alt="" width="1000" height="auto">
-          			</div>
-           			<br>
-
-  				</p>
+       	<div class="container text-center">
+	   	 	<img class="img-fluid" src="./images/LDPC_git_diagram_2.png" alt="" width="1200" height="500">
+        </div>
+ 		<br>
+        
   			</div>
   		</div>
   		
@@ -106,6 +99,7 @@
 
   </section>
 
+  
   <section id="publications">
     <div class="container">
       <div class="row">
@@ -128,6 +122,21 @@
     </div>
   </section>
 
+<section id="projectstatus">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-lg-10 mx-auto">
+  				<h2>Project Status and Future Work</h2>
+  				<p class="lead">
+  					Currently, our testbed supports several hard-decision decoding algorithms such as Gallager B (GaB), Probabilistic GaB (PGaB), Gradient Descent Bit Flipping (GDBF), and Probabilistic GDBF (PGDBF). The FPGA based testbed allows users to specify different simulation parameters before launching the execution, and returns the statistics to the user for calculating the error correction performance of decoder under test. <br><br>
+
+  					In future works, we aim to add more recent hard-decision decoding algorithms like Probabilistic Parallel Bit Flipping (PPBF), Tabu-list Random-penalty GDBF (TRGDBF) etc. to the decoder library. We further aim to take the testbed on MPSoC. Taking advantage of this platform, the aim is to make the testbed more flexible and capable. Besides statistics, it should be able to provide detailed information to the users to identify the weaknesses of the simulated decoders.
+  				</p>
+  			</div>
+  		</div>
+  	</div>
+  	
+  </section>
 
     <!-- Profiles are generated via js/profile.js -->
     <div class="container">
@@ -154,7 +163,7 @@
           
           <h4>Previous Contributors</h4>
             <div class="col-sm mx-auto text-center">
-              <div class="contrib-profile" data-name="Burak Unal" data-location=""></div>
+              <div class="contrib-profile" data-name="Burak Unal" data-location="Karabuk University"></div>
             </div>
 
           </div>

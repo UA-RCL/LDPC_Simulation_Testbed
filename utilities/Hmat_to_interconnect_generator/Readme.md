@@ -4,7 +4,7 @@ This folder contains a C program that converts any H-matrix for Regular Low Dens
 
 ## Instruction for execution
 1. Compile the HmatToInterconnect.c using the following command  
-  ```gcc -o hmattointerconnect HmatToInterconnect.c```
+  ```gcc -o hmattointerconnect HmatToInterconnect.c```  
 2. Execute the generated binary file using the following command and arguments:  
   ```./hmattointerconnect <File-size and degree of decoder> <File- H matrix from CNU perspective> <File- H matrix from VNU perspective> <File name- to write output in vhd>```
 

@@ -2,7 +2,7 @@
 
 This folder contains a C program that converts any H-matrix for Regular Low Density Parity Check (LDPC) code into VHDL signal interconnect, in order to use with our high-throughput simulation testbed.
 
-##Instruction for execution
+## Instruction for execution
 1. Compile the HmatToInterconnect.c using the following command
   `gcc -o hmattointerconnect HmatToInterconnect.c`
 2. Execute the generated binary file using the following command and arguments:

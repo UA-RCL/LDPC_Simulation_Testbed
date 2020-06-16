@@ -4,7 +4,6 @@
 ## language             : c (ansi)
 ## short description    : Converter for H-matrix to VHDL interconnect of decoder
 ## history              : Created by Md Sahil Hassan
-##                      :
 ## copyright            : sahilhassan@email.arizona.edu
 ## ######################################################################################################################## */
 
@@ -40,8 +39,8 @@ for (n=0; n<N; n++) DVform[n] = (int *) calloc(dc, sizeof(int));
 
 // Initializing Matrix files
 FILE *DformFile, *DVformFile;
-DformFile = fopen(argv[2],"r"); //("IRISC_dv4_R050_L54_N1296_Dform", "r");
-DVformFile = fopen(argv[3],"r");  //("IRISC_dv4_R050_L54_N1296_DVform", "r");
+DformFile = fopen(argv[2],"r"); 
+DVformFile = fopen(argv[3],"r");
 
 // Reading Matrix files into Matrix data structure
 for (m=0; m<M; m++){
@@ -57,7 +56,7 @@ for (n=0; n<N; n++){
 
 // Creating output file
 FILE *outputfile;
-outputfile = fopen(argv[4],"w");      //("output.vhd","w");
+outputfile = fopen(argv[4],"w");
 
 
 // Generating VN_out_sig to CN_in_sig -- VNU connections serialized
@@ -66,8 +65,6 @@ outputfile = fopen(argv[4],"w");      //("output.vhd","w");
   // Initialize CNU connection counter array
   int *CN_conn_count;
   CN_conn_count = (int *)calloc(M, sizeof(int));
-
-  //for (m=0; m<M; m++) CN_conn_count[m] = 0; // Resetting CN_conn_count values to 0
 
   for (n=0; n<N; n++){
     for (k=0; k<dv; k++){
@@ -81,8 +78,6 @@ outputfile = fopen(argv[4],"w");      //("output.vhd","w");
 // Generating VN_out_sigd to CN_in_sigd -- VNU connections serialized and replicated between [0,1295]
 // Need to go over DVform matrix
   // Initialize CNU connection counter array
-  /*int *CN_conn_count;
-  CN_conn_count = (int *)calloc(M, sizeof(int));*/
   for (m=0; m<M; m++) CN_conn_count[m] = 0; // Resetting CN_conn_count values to 0
 
   for (n=0; n<N; n++){

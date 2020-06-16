@@ -1,3 +1,13 @@
+/* ###########################################################################################################################
+## organization         : Reconfigurable Computing Lab, University of Arizona
+## file name            : HmatToInterconnect.c
+## language             : c (ansi)
+## short description    : Converter for H-matrix to VHDL interconnect of decoder
+## history              : Created by Md Sahil Hassan
+##                      :
+## copyright            : sahilhassan@email.arizona.edu
+## ######################################################################################################################## */
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
